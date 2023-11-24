@@ -27,7 +27,7 @@ export const mainListItems = (
         <ListItemText primary="Find A Supplier/Buyer" />
       </ListItemButton>
     </Link>
-    <Link href="/" underline="none" color="black">
+    <Link href="/list" underline="none" color="black">
       <ListItemButton>
         <ListItemIcon>
           <PeopleIcon />

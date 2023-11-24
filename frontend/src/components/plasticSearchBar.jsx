@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { companiesWithPlastic } from "../assets/companyPlasticHoldings";
+import Button from '@mui/material/Button';
 import "./plasticSearchBar.css";
 
 const PlasticSearch = () => {
@@ -97,12 +98,18 @@ const PlasticSearch = () => {
       </div>
 
       <div className="results-container">
-        {currentItems.length === 0 ? (
-          <p>No companies found with the specified criteria.</p>
-        ) : (
-          currentItems.map((company) => (
-            <div key={company.id}>
+      {currentItems.length === 0 ? (
+        <p>No companies found with the specified criteria.</p>
+      ) : (
+        currentItems.map((company) => (
+          <div key={company.id}>
+            <div className="company-details">
+              <div className='company-name'>
+
               <h3>{company.companyName}</h3>
+                <p>Phone: {company.contactInfo.phoneNumber}</p>
+                <p>Address: {company.contactInfo.address}</p>
+              </div>
               <ul>
                 {Object.entries(company.plasticAvail)
                   .filter(([plastic, details]) => details.amount > 0)
@@ -112,18 +119,13 @@ const PlasticSearch = () => {
                     </li>
                   ))}
               </ul>
-              <button className="contact-button" onClick={() => handleContactClick(company)}>
-                Contact
-              </button>
-              {selectedCompany === company && (
-                <div>
-                  <p>Phone: {company.contactInfo.phoneNumber}</p>
-                  <p>Address: {company.contactInfo.address}</p>
-                </div>
-              )}
+            <div className="contact-info">
+            <Button variant="contained">Request</Button>
             </div>
-          ))
-        )}
+            </div>
+          </div>
+        ))
+      )}
 
         {/* Pagination */}
         {results.length > itemsPerPage && (
