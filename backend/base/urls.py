@@ -10,9 +10,11 @@ from user.views import (
     RegisterView,
 )
 from user.views import UserViewSet
+from company.views import CompanyViewSet
 
 router = DefaultRouter()
 router.register("api/users", UserViewSet, basename="user")
+router.register("api/companies", CompanyViewSet, basename="company")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
