@@ -17,6 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Avatar from '@mui/material/Avatar';
 import { mainListItems, secondaryListItems } from './listItems';
+import ListPlasticComponent from "./listPlasticComponent";
 
 
 const drawerWidth = 240;
@@ -85,12 +86,12 @@ export default function ListPlastic() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: "24px", // keep right padding when drawer closed
             }}
           >
             <IconButton
@@ -99,8 +100,8 @@ export default function ListPlastic() {
               aria-label="open drawer"
               onClick={toggleDrawer}
               sx={{
-                marginRight: '36px',
-                ...(open && { display: 'none' }),
+                marginRight: "36px",
+                ...(open && { display: "none" }),
               }}
             >
               <MenuIcon />
@@ -112,11 +113,11 @@ export default function ListPlastic() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              List your Plastic
             </Typography>
             <IconButton color="inherit">
-              <Badge color="secondary">
-              <Avatar alt="Company Logo" src="" />
+            <Badge color="secondary" badgeContent={4}>
+                <Avatar alt="Company Logo" src="" />
               </Badge>
             </IconButton>
           </Toolbar>
@@ -124,9 +125,9 @@ export default function ListPlastic() {
         <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'flex-end',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
               px: [1],
             }}
           >
@@ -145,51 +146,17 @@ export default function ListPlastic() {
           component="main"
           sx={{
             backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
+              theme.palette.mode === "light"
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
-            height: '100vh',
-            overflow: 'auto',
+            height: "100vh",
+            overflow: "auto",
           }}
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <h1>Company Name</h1>
-                  <h3>Company address</h3>
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-
-                </Paper>
-              </Grid>
-            </Grid>
+            <ListPlasticComponent />
           </Container>
         </Box>
       </Box>

@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<SideSignIn />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/search" element={<CompanySearch />} />
-          <Route path='/list' element={ListPlastic} />
+          <Route path='/list' element={<ListPlastic />} />
         </Routes>
       </Router>
     </>

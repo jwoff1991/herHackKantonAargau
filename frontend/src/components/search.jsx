@@ -113,10 +113,10 @@ export default function CompanySearch() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Search for Suppliers/Buyers
+              Search for Suppliers
             </Typography>
             <IconButton color="inherit">
-              <Badge color="secondary">
+            <Badge color="secondary" badgeContent={4}>
               <Avatar alt="Company Logo" src="" />
               </Badge>
             </IconButton>

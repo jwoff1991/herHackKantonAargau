@@ -1,0 +1,26 @@
+/* Your existing CSS styles */
+
+/* Additional styles for the form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px; /* Adjust the maximum width as needed */
+    margin: auto;
+  }
+
+  select,
+  input[type="number"] {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%; /* Adjust the width as needed */
+  }
+
+  .add-another-plastic {
+    text-align: right;
+  }
+
+  button[type="submit"] {
+    align-self: flex-end;
+    width: 150px; /* Adjust the width as needed */
+  }

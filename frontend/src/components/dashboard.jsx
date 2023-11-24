@@ -115,7 +115,7 @@ export default function Dashboard() {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge color="secondary">
+              <Badge color="secondary" badgeContent={4}>
               <Avatar alt="Company Logo" src="" />
               </Badge>
             </IconButton>
