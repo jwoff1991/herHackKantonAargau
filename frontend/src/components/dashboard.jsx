@@ -166,7 +166,8 @@ export default function Dashboard() {
                     height: 240,
                   }}
                 >
-
+                  <h1>Company Name</h1>
+                  <h3>Company address</h3>
                 </Paper>
               </Grid>
               {/* Recent Deposits */}

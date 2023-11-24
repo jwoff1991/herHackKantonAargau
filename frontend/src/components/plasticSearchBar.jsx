@@ -112,7 +112,7 @@ const PlasticSearch = () => {
                     </li>
                   ))}
               </ul>
-              <button onClick={() => handleContactClick(company)}>
+              <button className="contact-button" onClick={() => handleContactClick(company)}>
                 Contact
               </button>
               {selectedCompany === company && (
