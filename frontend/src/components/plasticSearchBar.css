@@ -74,9 +74,16 @@
   .results-container .company-details ul {
     list-style: none;
     padding-top: 20px;
-    margin: 0;
+
   }
 
   .company-name {
     width: 14vw;
   }
+
+
+.plastic-and-amount {
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+}

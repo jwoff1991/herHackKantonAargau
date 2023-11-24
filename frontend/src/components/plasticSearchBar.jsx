@@ -98,34 +98,36 @@ const PlasticSearch = () => {
       </div>
 
       <div className="results-container">
-      {currentItems.length === 0 ? (
-        <p>No companies found with the specified criteria.</p>
-      ) : (
-        currentItems.map((company) => (
-          <div key={company.id}>
-            <div className="company-details">
-              <div className='company-name'>
-
-              <h3>{company.companyName}</h3>
-                <p>Phone: {company.contactInfo.phoneNumber}</p>
-                <p>Address: {company.contactInfo.address}</p>
+        {currentItems.length === 0 ? (
+          <p>No companies found with the specified criteria.</p>
+        ) : (
+          currentItems.map((company) => (
+            <div key={company.id}>
+              <div className="company-details">
+                <div className="company-name">
+                  <h3>{company.companyName}</h3>
+                  <p>Phone: {company.contactInfo.phoneNumber}</p>
+                  <p>Address: {company.contactInfo.address}</p>
+                </div>
+                <ul>
+                  {Object.entries(company.plasticAvail)
+                    .filter(([plastic, details]) => details.amount > 0)
+                    .map(([plastic, details]) => (
+                      <li key={plastic} className="plastic-and-amount">
+                        <span className="plastic-name">{plastic}:</span>
+                        <span className="plastic-amount">
+                          {details.amount} kgs
+                        </span>
+                      </li>
+                    ))}
+                </ul>
+                <div className="contact-info">
+                  <Button variant="contained">Request</Button>
+                </div>
               </div>
-              <ul>
-                {Object.entries(company.plasticAvail)
-                  .filter(([plastic, details]) => details.amount > 0)
-                  .map(([plastic, details]) => (
-                    <li key={plastic}>
-                      {plastic}: {details.amount} kgs
-                    </li>
-                  ))}
-              </ul>
-            <div className="contact-info">
-            <Button variant="contained">Request</Button>
             </div>
-            </div>
-          </div>
-        ))
-      )}
+          ))
+        )}
 
         {/* Pagination */}
         {results.length > itemsPerPage && (
