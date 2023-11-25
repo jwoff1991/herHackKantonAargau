@@ -1,6 +1,4 @@
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import {Box} from '@mui/material';
 import List from '@mui/material/List';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
@@ -12,8 +10,10 @@ import MuiAppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
+import CssBaseline from '@mui/material/CssBaseline';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ListPlasticComponent from "./listPlasticComponent";
+import {Box} from '@mui/material';
 import { mainListItems, secondaryListItems } from './listItems';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 

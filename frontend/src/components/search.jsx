@@ -1,23 +1,21 @@
 import * as React from 'react';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import {Box} from '@mui/material';
+import List from '@mui/material/List';
+import Badge from '@mui/material/Badge';
+import Avatar from '@mui/material/Avatar';
+import Toolbar from '@mui/material/Toolbar';
+import Divider from '@mui/material/Divider';
+import MenuIcon from '@mui/icons-material/Menu';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import Avatar from '@mui/material/Avatar';
-import { mainListItems, secondaryListItems } from './listItems';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import CssBaseline from '@mui/material/CssBaseline';
 import PlasticSearch from './plasticSearchBar';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import {Box} from '@mui/material';
+import { mainListItems, secondaryListItems } from './listItems';
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 const drawerWidth = 240;
