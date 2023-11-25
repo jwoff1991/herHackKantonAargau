@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'user',
     'company',
     'plastic',
+    'request',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from .models import Plastic_stock
+from .models import Plastic, Plastic_stock
+
+class PlasticSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Plastic
+        fields = '__all__'
 
 class PlasticStockSerializer(serializers.ModelSerializer):
     plasticStock = serializers.CharField(source='plastic')
