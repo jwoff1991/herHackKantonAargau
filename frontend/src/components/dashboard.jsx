@@ -1,22 +1,23 @@
 import * as React from 'react';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import {Box} from '@mui/material';
-import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Badge from '@mui/material/Badge';
 import Paper from '@mui/material/Paper';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Avatar from '@mui/material/Avatar';
+import Toolbar from '@mui/material/Toolbar';
+import Divider from '@mui/material/Divider';
+import MenuIcon from '@mui/icons-material/Menu';
+import MuiAppBar from '@mui/material/AppBar';
+import Container from '@mui/material/Container';
+import MuiDrawer from '@mui/material/Drawer';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import CssBaseline from '@mui/material/CssBaseline';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import {Box} from '@mui/material';
 import { mainListItems, secondaryListItems } from './listItems';
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 
 const drawerWidth = 240;
@@ -85,12 +86,12 @@ export default function Dashboard() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: "24px", // keep right padding when drawer closed
             }}
           >
             <IconButton
@@ -99,8 +100,8 @@ export default function Dashboard() {
               aria-label="open drawer"
               onClick={toggleDrawer}
               sx={{
-                marginRight: '36px',
-                ...(open && { display: 'none' }),
+                marginRight: "36px",
+                ...(open && { display: "none" }),
               }}
             >
               <MenuIcon />
@@ -116,7 +117,7 @@ export default function Dashboard() {
             </Typography>
             <IconButton color="inherit">
               <Badge color="secondary" badgeContent={4}>
-              <Avatar alt="Company Logo" src="" />
+                <Avatar alt="Company Logo" src="" />
               </Badge>
             </IconButton>
           </Toolbar>
@@ -124,9 +125,9 @@ export default function Dashboard() {
         <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'flex-end',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
               px: [1],
             }}
           >
@@ -145,48 +146,112 @@ export default function Dashboard() {
           component="main"
           sx={{
             backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
+              theme.palette.mode === "light"
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
-            height: '100vh',
-            overflow: 'auto',
+            height: "100vh",
+            overflow: "auto",
           }}
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Chart */}
+              {/* Company Info */}
               <Grid item xs={12} md={8} lg={9}>
                 <Paper
                   sx={{
                     p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
+                    display: "flex",
+                    flexDirection: "column",
                     height: 240,
                   }}
                 >
-                  <h1>Company Name</h1>
-                  <h3>Company address</h3>
+                  <h1>GreenTech Polymers AG</h1>
+                  <h3>17 Mountain View Drive, Zurich, Switzerland, 8001</h3>
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
+              {/* CO2 saved */}
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
+                    // p: 2,
+                    display: "flex",
+                    flexDirection: "column",
                     height: 240,
+                    alignItems: "center",
                   }}
                 >
+                  <h2>Possible CO2 Saved</h2>
+                  <div className='tons-per-kg-saved'>
+                  <span className='tons-saved'><img src='./src/assets/co2.png' className='pic-co2'/></span>
+
+                  </div>
 
                 </Paper>
               </Grid>
-              {/* Recent Orders */}
+              {/* Recent Requests */}
               <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-
+                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                  <p>Recent Accepted Requets</p>
+                  <TableContainer>
+                    <Table>
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Company Name</TableCell>
+                          <TableCell>Plastic Type</TableCell>
+                          <TableCell>Amount (kgs)</TableCell>
+                          <TableCell>Date</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {/* Replace the data below with your actual request data */}
+                        <TableRow>
+                          <TableCell>ABC Plastics</TableCell>
+                          <TableCell>
+                            Polyethylene terephthalate (PET(E))
+                          </TableCell>
+                          <TableCell>100</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Company B</TableCell>
+                          <TableCell>
+                            High-density polyethylene (PEHD/HDPE)
+                          </TableCell>
+                          <TableCell>150</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>General Plastic Co</TableCell>
+                          <TableCell>
+                          Polypropylene (PP)
+                          </TableCell>
+                          <TableCell>1000</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Your Plastic Source</TableCell>
+                          <TableCell>
+                          Low-density polyethylene (PELD)
+                          </TableCell>
+                          <TableCell>500</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Germal Household Plastics</TableCell>
+                          <TableCell>
+                            Polyethylene terephthalate (PET(E))
+                          </TableCell>
+                          <TableCell>100</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>ABC Plastics</TableCell>
+                          <TableCell>
+                            Polyethylene terephthalate (PET(E))
+                          </TableCell>
+                          <TableCell>1500</TableCell>
+                        </TableRow>
+                        {/* Add more rows as needed */}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </Paper>
               </Grid>
             </Grid>

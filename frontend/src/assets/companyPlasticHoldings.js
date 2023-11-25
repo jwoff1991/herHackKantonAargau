@@ -5,7 +5,7 @@ export const companiesWithPlastic = [
       "plasticAvail": {
         "#1 PET(E) Polyethylene terephthalate": { "amount": 0 },
         "#2 PEHD or HDPE High-density polyethylene": { "amount": 1500 },
-        "#3 PVC Polyvinyl chloride": { "amount": 400 },
+        "#3 PVC Polyvinyl chloride": { "amount": 700 },
         "#4 PELD or LDPE Low-density polyethylene": { "amount": 0 },
         "#5 PP Polypropylene": { "amount": 100 },
         "#6 PS Polystyrene": { "amount": 2000 },

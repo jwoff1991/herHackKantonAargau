@@ -43,11 +43,11 @@ export default function ideSignIn() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(/icons/Iconfinal.png)',
+            backgroundImage: 'url(/homepage.png)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: '80%',
+            backgroundSize: '45%',
             backgroundPosition: 'center',
           }}
         />

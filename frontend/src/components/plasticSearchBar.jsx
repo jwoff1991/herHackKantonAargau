@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { companiesWithPlastic } from "../assets/companyPlasticHoldings";
 import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import TextField from '@mui/material/TextField';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import { companiesWithPlastic } from "../assets/companyPlasticHoldings";
+import React, { useState, useEffect } from "react";
 import "./plasticSearchBar.css";
 
 const PlasticSearch = () => {
@@ -62,6 +67,34 @@ const PlasticSearch = () => {
     }
   };
 
+  const [openModal, setOpenModal] = useState(false);
+  const [modalFormData, setModalFormData] = useState({
+    company: '',
+    plastics: [],
+  });
+
+  const handleOpenModal = (company) => {
+    setModalFormData({
+      company: company.companyName,
+      plastics: Object.entries(company.plasticAvail)
+        .filter(([_, details]) => details.amount > 0)
+        .map(([plastic, details]) => ({
+          plastic,
+          amount: 0, // Set default amount to 0 for each plastic
+        })),
+    });
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
+  const handleSubmitModal = () => {
+    // Logic to handle form submission
+    handleCloseModal();
+  };
+
   return (
     <div>
       <div className="search-container">
@@ -110,6 +143,7 @@ const PlasticSearch = () => {
                   <p>Address: {company.contactInfo.address}</p>
                 </div>
                 <ul>
+                  <h4>Plastics Available</h4>
                   {Object.entries(company.plasticAvail)
                     .filter(([plastic, details]) => details.amount > 0)
                     .map(([plastic, details]) => (
@@ -122,12 +156,56 @@ const PlasticSearch = () => {
                     ))}
                 </ul>
                 <div className="contact-info">
-                  <Button variant="contained">Request</Button>
+                  <Button
+                    variant="contained"
+                    onClick={() => handleOpenModal(company)}
+                  >
+                    Request
+                  </Button>
                 </div>
               </div>
             </div>
           ))
         )}
+        {/*Moodal */}
+        <Dialog open={openModal} onClose={handleCloseModal}>
+          <DialogTitle>Request Plastics</DialogTitle>
+          <DialogContent>
+            <p>{modalFormData.company}</p>
+            <form>
+              {modalFormData.plastics.map((item, index) => (
+                <div key={index} className="plastic-input">
+                  <TextField
+                    label={`${item.plastic} (kgs)`}
+                    type="number"
+                    value={item.amount}
+
+                    onChange={(e) =>
+                      setModalFormData((prevData) => ({
+                        ...prevData,
+                        plastics: prevData.plastics.map((plastic, idx) =>
+                          idx === index
+                            ? { ...plastic, amount: e.target.value }
+                            : plastic
+                        ),
+                      }))
+                    }
+                  />
+                </div>
+              ))}
+            </form>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleCloseModal}>Cancel</Button>
+            <Button
+              onClick={handleSubmitModal}
+              variant="contained"
+              color="primary"
+            >
+              Submit
+            </Button>
+          </DialogActions>
+        </Dialog>
 
         {/* Pagination */}
         {results.length > itemsPerPage && (
