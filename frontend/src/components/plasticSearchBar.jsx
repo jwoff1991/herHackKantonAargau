@@ -91,8 +91,8 @@ const PlasticSearch = () => {
   };
 
   const handleSubmitModal = () => {
-    // Logic to handle form submission
     handleCloseModal();
+    alert("Request submitted!");
   };
 
   return (
@@ -126,6 +126,7 @@ const PlasticSearch = () => {
           placeholder="Amount in kgs"
           value={amountInKgs}
           onChange={handleAmountInKgs}
+          width="75px"
         />
         <button onClick={handleSearch}>Search</button>
       </div>
