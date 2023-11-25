@@ -11,10 +11,12 @@ from user.views import (
 )
 from user.views import UserViewSet
 from company.views import CompanyViewSet
+from plastic.views import PlasticStockViewSet
 
 router = DefaultRouter()
 router.register("api/users", UserViewSet, basename="user")
 router.register("api/companies", CompanyViewSet, basename="company")
+router.register("api/plastic", PlasticStockViewSet, basename="plastic_stock")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
