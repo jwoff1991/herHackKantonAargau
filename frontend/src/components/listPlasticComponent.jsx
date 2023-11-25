@@ -39,8 +39,8 @@ const ListPlasticComponent = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventdefault()
     alert("Plastic listed")
+    e.preventdefault()
   }
 
   return (

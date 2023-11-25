@@ -212,6 +212,7 @@ export default function Dashboard() {
                             Polyethylene terephthalate (PET(E))
                           </TableCell>
                           <TableCell>100</TableCell>
+                          <TableCell>22/1/2023</TableCell>
                         </TableRow>
                         <TableRow>
                           <TableCell>Company B</TableCell>
@@ -219,6 +220,7 @@ export default function Dashboard() {
                             High-density polyethylene (PEHD/HDPE)
                           </TableCell>
                           <TableCell>150</TableCell>
+                          <TableCell>15/4/2023</TableCell>
                         </TableRow>
                         <TableRow>
                           <TableCell>General Plastic Co</TableCell>
@@ -226,6 +228,7 @@ export default function Dashboard() {
                           Polypropylene (PP)
                           </TableCell>
                           <TableCell>1000</TableCell>
+                          <TableCell>10/6/2023</TableCell>
                         </TableRow>
                         <TableRow>
                           <TableCell>Your Plastic Source</TableCell>
@@ -233,6 +236,7 @@ export default function Dashboard() {
                           Low-density polyethylene (PELD)
                           </TableCell>
                           <TableCell>500</TableCell>
+                          <TableCell>1/7/2023</TableCell>
                         </TableRow>
                         <TableRow>
                           <TableCell>Germal Household Plastics</TableCell>
@@ -240,6 +244,7 @@ export default function Dashboard() {
                             Polyethylene terephthalate (PET(E))
                           </TableCell>
                           <TableCell>100</TableCell>
+                          <TableCell>15/8/2023</TableCell>
                         </TableRow>
                         <TableRow>
                           <TableCell>ABC Plastics</TableCell>
@@ -247,6 +252,7 @@ export default function Dashboard() {
                             Polyethylene terephthalate (PET(E))
                           </TableCell>
                           <TableCell>1500</TableCell>
+                          <TableCell>22/10/2023</TableCell>
                         </TableRow>
                         {/* Add more rows as needed */}
                       </TableBody>
